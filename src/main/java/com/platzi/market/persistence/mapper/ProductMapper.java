@@ -2,10 +2,7 @@ package com.platzi.market.persistence.mapper;
 
 import com.platzi.market.domain.Product;
 import com.platzi.market.persistence.entity.Producto;
-import org.mapstruct.InheritConfiguration;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
+import org.mapstruct.*;
 
 import java.util.List;
 
@@ -24,7 +21,7 @@ public interface ProductMapper {
     Product toProduct(Producto producto);
     List<Product> toProducts(List<Producto> productos);
 
-    @InheritConfiguration
+    @InheritInverseConfiguration
     @Mapping(target = "codigoBarras", ignore = true)
     Producto toProducto(Product product);
 }
