@@ -18,6 +18,7 @@ public interface PurchaseMapper {
             @Mapping(source = "fecha", target = "date"),
             @Mapping(source = "medioPago", target = "paymentMethod"),
             @Mapping(source = "comentario", target = "comment"),
+            @Mapping(source = "estado", target = "state"),
             @Mapping(source = "productos", target = "items") //Es el source que utiliza PurchaseItemMapper para mapear los productos
     })
     Purchase toPurchase(Compra compra);
